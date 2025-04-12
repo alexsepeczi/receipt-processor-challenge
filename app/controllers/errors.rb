@@ -1,0 +1,7 @@
+# typed: false
+# frozen_string_literal: true
+
+module Errors
+  class NotFoundError < StandardError; end
+  class BadRequest < StandardError; end
+end
