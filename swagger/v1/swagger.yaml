@@ -1,0 +1,28 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/receipts/process":
+    post:
+      summary: Submits a receipt for processing.
+      parameters: []
+      responses:
+        '200':
+          description: successful
+        '400':
+          description: bad request
+  "/receipts/{id}/points":
+    get:
+      summary: Returns the points awarded for the receipt.
+      parameters:
+      - name: id
+        in: path
+        required: true
+      responses:
+        '404':
+          description: not found
+servers:
+- url: http://localhost:3000
+  description: Development server

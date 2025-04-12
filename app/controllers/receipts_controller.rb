@@ -6,6 +6,9 @@ class ReceiptsController < ApplicationController
 
   def create
     receipt = Receipt.new(**receipt_params)
+
+    Rails.cache.write(receipt.id, receipt)
+
     render json: { id: receipt.id }, status: :ok
   end
 

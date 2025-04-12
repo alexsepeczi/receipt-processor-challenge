@@ -15,8 +15,6 @@ class Receipt < Object
     @total = total.to_f if total
 
     @points = calculate_points || 0
-
-    Rails.cache.write(@id, self)
   end
 
   private
