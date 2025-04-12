@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
+3.3.6
 
-* System dependencies
+# How to get this running
 
-* Configuration
+```bash
+   git clone https://github.com/alexsepeczi/receipt-processor-challenge
+```
 
-* Database creation
+```bash
+   docker-compose build
+```
 
-* Database initialization
+```bash
+  docker-compose up
+```
+
+And it should be ready to go!
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash  
+   rspec spec/requests/receipts_spec.rb 
 
-* Deployment instructions
 
-* ...
