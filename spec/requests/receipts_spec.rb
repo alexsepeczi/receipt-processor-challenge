@@ -1,7 +1,7 @@
 require 'swagger_helper'
 
 # Using rswag testing framework we can make these api specs quite easily and readable. It will create the actual
-# responses in the background and test response codes.
+# responses and test response codes for us.
 RSpec.describe 'receipts', type: :request do
   # This group of tests will ensure both creation and retrieval of receipts works correctly
   path '/receipts/process' do

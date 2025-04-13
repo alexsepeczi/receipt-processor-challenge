@@ -4,7 +4,15 @@
 class Receipt < Object
   attr_accessor :id, :points
 
-  # We expect that anything can be nil and we just ignore it
+  # This object will be the base object for the receipt. Will take in the following params and hold one calculated
+  # attribute named points. For now, this object will only need to be able to handle
+  # 1. creating a receipt with the correct amount of points that has a unique id to be used on retrieval
+  # @param retailer [Sting] the retailer name. Will ignore if nil
+  # @param purchaseDate [Sting] date of purchase. Will ignore if nil or invalid
+  # @param purchaseTime [Sting] time of purchase. Will ignore if nil or invalid
+  # @param items [Array<Hash>] is hash formatted with attributes :shortDescription and :price
+  # @param total [String] total cost from the receipt. Will ignore if nil.
+  # @return [Receipt]
   def initialize(retailer: nil, purchaseDate: nil, purchaseTime: nil, items: nil, total: nil)
     @id = SecureRandom.uuid
     @retailer = retailer

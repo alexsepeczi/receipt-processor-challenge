@@ -21,6 +21,7 @@ class ReceiptsController < ApplicationController
     render json: { errors: [{ code: 'not_found', message: 'No receipt found for that ID.' }] }, status: :not_found
   end
 
+  ## 400 Bad Request
   rescue_from Errors::BadRequest, Date::Error do |_|
     render json: { errors: [{ code: 'bad_request', message: 'The receipt is invalid.' }] },
            status: :bad_request
